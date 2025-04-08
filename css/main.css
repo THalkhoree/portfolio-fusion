@@ -1,0 +1,209 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #fceef2, #fff5f8);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+  
+  body.dark {
+    background: linear-gradient(to bottom right, #1e1e1e, #121212);
+    color: #e0e0e0;
+  }
+  
+  /* ===== Header ===== */
+  header {
+    background-color: #a0134d;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a:focus,
+  .nav-links li a.active {
+    border: 2px solid white;
+    background-color: #a0134d;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* ===== Intro Section ===== */
+  .intro {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    max-width: 800px;
+  }
+  
+  .intro h1 {
+    color: #a0134d;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  body.dark .intro h1 {
+    color: #f06595;
+  }
+  
+  .intro .tagline {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  body.dark .tagline {
+    color: #ccc;
+  }
+  
+  /* ===== Main Section ===== */
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .projects h2 {
+    text-align: center;
+    color: #a0134d;
+    margin-bottom: 2rem;
+  }
+  
+  body.dark .projects h2 {
+    color: #f06595;
+  }
+  
+  /* ===== Flip Card Layout ===== */
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    perspective: 1000px;
+    flex: 1 0 23%;
+    min-width: 250px;
+    height: 280px;
+    border: none;
+    background: transparent;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .project-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #a0134d;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    background-color: #870f3f;
+  }
+  
+  /* ===== Buttons ===== */
+  .btn {
+    background-color: white;
+    color: #a0134d;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .btn:hover {
+    background-color: #f0f0f0;
+    color: #870f3f;
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    background-color: #a0134d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.95rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* ===== Scrollbar for Project List ===== */
+  .project-list::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .project-list::-webkit-scrollbar-thumb {
+    background-color: #a0134d;
+    border-radius: 10px;
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .intro h1 {
+      font-size: 1.8rem;
+    }
+  
+    .project-card {
+      flex: 1 0 80%;
+    }
+  }
+  
+  
+  

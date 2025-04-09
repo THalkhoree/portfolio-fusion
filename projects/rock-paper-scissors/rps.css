@@ -1,0 +1,192 @@
+/* ===== Base Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
+    color: #333;
+    text-align: center;
+    scroll-behavior: smooth;
+    transition: background 0.4s ease, color 0.4s ease;
+    min-height: 100vh;
+  }
+  
+  /* ===== Dark Mode ===== */
+  body.dark {
+    background: linear-gradient(to bottom right, #1e1e1e, #121212);
+    color: #e0e0e0;
+  }
+  
+  body.dark header {
+    background-color: #a0134d !important;
+  }
+  
+  body.dark .btn {
+    background-color: white;
+    color: #a0134d;
+  }
+  
+  body.dark .btn:hover {
+    background-color: #ffe4ec;
+    color: #870f3f;
+  }
+  
+  body.dark .game-container {
+    background-color: #1e1e1e;
+  }
+  
+  /* ===== Header ===== */
+  header {
+    background-color: #a0134d;
+    padding: 1rem 0;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a:focus,
+  .nav-links li a.active {
+    border: 2px solid white;
+    background-color: #a0134d;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* ===== Dark Mode Toggle Button ===== */
+  .dark-btn {
+    background: none;
+    border: 2px solid white;
+    color: yellow;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+  
+  .dark-btn:hover {
+    background-color: white;
+    color: #a0134d;
+  }
+  
+  /* ===== Game Section ===== */
+  .game-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .game-container h1 {
+    color: #a0134d;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .instructions {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* ===== RPS Choice Buttons ===== */
+  .choices {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .choice {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .choice:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffb6d2;
+  }
+  
+  /* ===== Result Display ===== */
+  .result {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .result p {
+    margin: 0.5rem 0;
+  }
+  
+  /* ===== Scoreboard ===== */
+  .scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  /* ===== Reset Button ===== */
+  .btn {
+    margin-top: 2rem;
+    padding: 0.6rem 1.5rem;
+    background-color: #a0134d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #870f3f;
+  }
+  
+  /* ===== Responsive Layout ===== */
+  @media (max-width: 768px) {
+    .choices {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .choice {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .scoreboard {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .game-container h1 {
+      font-size: 1.6rem;
+    }
+  }
+  

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RPS Game | RH Glam Edition</title>
+  <link rel="stylesheet" href="rps.css" />
+</head>
+<body>
+
+  <!-- Glowing Navigation Bar -->
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../landing-page/landing-page.html">Landing Page</a></li>
+        <li><a href="rps.html" class="active">RPS Game</a></li>
+        <li><a href="../business-advisor/index.html">Business Advisor</a></li>
+        <li><a href="../rss-reader/index.html">RSS Reader</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🌙 Dark Mode Toggle -->
+  <script>
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = '🌙';
+    toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+    Object.assign(toggleButton.style, {
+      position: 'fixed',
+      top: '10px',
+      right: '10px',
+      padding: '0.5rem 1rem',
+      border: '2px solid white',
+      backgroundColor: '#a0134d',
+      color: 'white',
+      borderRadius: '20px',
+      cursor: 'pointer',
+      zIndex: '1000',
+      fontSize: '1rem'
+    });
+    document.body.appendChild(toggleButton);
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+
+  <!-- Game Section -->
+  <main class="game-container">
+    <h1>Rock, Paper, Scissors</h1>
+    <p class="instructions">Choose wisely... the result will appear after 3 seconds ⏳</p>
+
+    <div class="choices">
+      <img src="images/rock.png" alt="Rock" id="rock" class="choice" />
+      <img src="images/paper.png" alt="Paper" id="paper" class="choice" />
+      <img src="images/scissors.png" alt="Scissors" id="scissors" class="choice" />
+    </div>
+
+    <div class="result">
+      <p id="status">Make your move!</p>
+      <p id="player-choice"></p>
+      <p id="computer-choice"></p>
+    </div>
+
+    <div class="scoreboard">
+      <p>Wins: <span id="wins">0</span></p>
+      <p>Losses: <span id="losses">0</span></p>
+      <p>Ties: <span id="ties">0</span></p>
+    </div>
+
+    <button id="reset" class="btn">Reset Game</button>
+  </main>
+
+  <!-- Game Logic Script -->
+  <script src="rps.js"></script>
+</body>
+</html>

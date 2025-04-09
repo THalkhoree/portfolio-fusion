@@ -14,28 +14,30 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* ===== Dark Mode Support ===== */
+/* ===== Dark Mode ===== */
 body.dark {
   background: linear-gradient(to bottom right, #1e1e1e, #121212);
   color: #e0e0e0;
 }
 
-body.dark .navbar-header,
-body.dark footer {
-  background-color: #111;
-  color: white;
+/* ✅ Keep header and footer pink in all modes */
+header,
+footer {
+  background-color: #a0134d !important;
+  color: white !important;
 }
 
-body.dark .tagline {
-  color: #f9a6c1;
-}
-
+/* Dark mode section overrides */
 body.dark .hero,
 body.dark .about,
 body.dark .collection,
 body.dark .contact {
   background-color: #1e1e1e;
   color: white;
+}
+
+body.dark .hero p {
+  color: #ccc;
 }
 
 body.dark .grid .item {
@@ -60,45 +62,39 @@ body.dark .btn:hover {
   color: #870f3f;
 }
 
-/* ===== Header/Navbar ===== */
-.navbar-header {
-  background-color: #a0134d;
-  padding-bottom: 1rem;
-  color: white;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+/* ===== Navigation Header ===== */
+header {
+  padding: 1rem 0;
+  text-align: center;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  justify-content: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-.nav-links a {
-  padding: 0.4rem 1rem;
-  border: 2px solid white;
-  border-radius: 25px;
+.nav-links li a {
   color: white;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 25px;
   transition: all 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: white;
-  color: #a0134d;
-  box-shadow: 0 0 10px white;
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a.active {
+  border: 2px solid white;
+  background-color: #a0134d;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-/* Dark Mode Button */
+/* ===== Dark Mode Toggle Button ===== */
 .dark-btn {
   background: none;
   border: 2px solid white;
@@ -108,35 +104,14 @@ body.dark .btn:hover {
   padding: 0.5rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .dark-btn:hover {
   background-color: white;
   color: #a0134d;
-}
-
-/* ===== Logo & Tagline ===== */
-.logo-brand {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-  border-radius: 50%;
-}
-
-.logo-brand h1 {
-  font-size: 2rem;
-  color: white;
-  margin: 0.5rem 0 0.2rem;
-}
-
-.tagline {
-  font-size: 1.1rem;
-  font-style: italic;
-  color: #ffddee;
 }
 
 /* ===== Hero Section ===== */
@@ -168,7 +143,7 @@ body.dark .btn:hover {
   background-color: #870f3f;
 }
 
-/* ===== Section General ===== */
+/* ===== Section Layouts ===== */
 section {
   padding: 3rem 1.5rem;
   text-align: center;
@@ -245,27 +220,24 @@ section h2 {
 
 /* ===== Footer ===== */
 footer {
-  background-color: #a0134d;
-  color: white;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
 }
 
-/* ===== Responsive Design ===== */
+/* ===== Responsive Layout ===== */
 @media (max-width: 768px) {
   .grid {
     flex-direction: column;
     align-items: center;
   }
 
-  .logo {
-    width: 80px;
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero h2 {
     font-size: 1.6rem;
   }
 }
-
-  

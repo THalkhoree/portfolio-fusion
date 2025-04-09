@@ -8,9 +8,9 @@
 </head>
 <body>
 
-  <!-- Navigation Header -->
-  <header class="navbar-header">
-    <nav class="top-nav">
+  <!-- Header: Styled Nav + Dark Mode Button -->
+  <header>
+    <nav>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="landing-page.html" class="active">Landing Page</a></li>
@@ -18,16 +18,33 @@
         <li><a href="../business-advisor/index.html">Business Advisor</a></li>
         <li><a href="../rss-reader/index.html">RSS Reader</a></li>
       </ul>
-      <button id="darkToggle" class="dark-btn">🌙</button>
     </nav>
-
-    <!-- Brand Logo and Title -->
-    <div class="logo-brand">
-      <img src="logo.png" alt="RH Glam Logo" class="logo" />
-      <h1>RH Glam</h1>
-      <p class="tagline">Soft, stylish, and effortlessly chic ✨</p>
-    </div>
   </header>
+
+  <!-- 🌙 Dark Mode Toggle Button -->
+  <script>
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = '🌙';
+    toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+    Object.assign(toggleButton.style, {
+      position: 'fixed',
+      top: '10px',
+      right: '10px',
+      padding: '0.5rem 1rem',
+      border: '2px solid white',
+      backgroundColor: '#a0134d',
+      color: 'white',
+      borderRadius: '20px',
+      cursor: 'pointer',
+      zIndex: '1000',
+      fontSize: '1rem'
+    });
+    document.body.appendChild(toggleButton);
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
 
   <main>
     <!-- Hero Section -->
@@ -69,18 +86,10 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 RH Glam | Designed by Tanushree</p>
   </footer>
-
-  <!-- 🌙 Dark Mode Script -->
-  <script>
-    const toggle = document.getElementById("darkToggle");
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-    });
-  </script>
 
 </body>
 </html>

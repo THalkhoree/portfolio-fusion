@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RH Glam | Fashion Inspired by You</title>
+  <link rel="stylesheet" href="landing-page.css" />
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar-header">
+    <nav class="top-nav">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="landing-page.html" class="active">Landing Page</a></li>
+        <li><a href="../rock-paper-scissors/index.html">RPS Game</a></li>
+        <li><a href="../business-advisor/index.html">Business Advisor</a></li>
+        <li><a href="../rss-reader/index.html">RSS Reader</a></li>
+      </ul>
+      <button id="darkToggle" class="dark-btn">🌙</button>
+    </nav>
+
+    <!-- Brand Logo and Title -->
+    <div class="logo-brand">
+      <img src="logo.png" alt="RH Glam Logo" class="logo" />
+      <h1>RH Glam</h1>
+      <p class="tagline">Soft, stylish, and effortlessly chic ✨</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Welcome to RH Glam</h2>
+      <p>Discover timeless elegance and modern femininity in every piece.</p>
+      <a href="https://www.instagram.com/r.h.glam" target="_blank" class="btn">Follow us on Instagram</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>RH Glam is more than a brand — it's a celebration of softness, confidence, and individuality. Our pieces are curated for women who love elegance and authenticity.</p>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="collection">
+      <h2>Our Collection</h2>
+      <div class="grid">
+        <div class="item">✨ Blush Maxi Dress</div>
+        <div class="item">🌸 Floral Wrap Top</div>
+        <div class="item">💫 Satin Pleated Skirt</div>
+        <div class="item">🎀 Soft Knit Cardigan</div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form action="https://wa.me/23058403382" method="get" target="_blank">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="text" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Send via WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RH Glam | Designed by Tanushree</p>
+  </footer>
+
+  <!-- 🌙 Dark Mode Script -->
+  <script>
+    const toggle = document.getElementById("darkToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
+
+</body>
+</html>
+

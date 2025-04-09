@@ -1,0 +1,271 @@
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===== Dark Mode Support ===== */
+body.dark {
+  background: linear-gradient(to bottom right, #1e1e1e, #121212);
+  color: #e0e0e0;
+}
+
+body.dark .navbar-header,
+body.dark footer {
+  background-color: #111;
+  color: white;
+}
+
+body.dark .tagline {
+  color: #f9a6c1;
+}
+
+body.dark .hero,
+body.dark .about,
+body.dark .collection,
+body.dark .contact {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark .grid .item {
+  background-color: #2e2e2e;
+  color: #ffcce6;
+}
+
+body.dark input,
+body.dark textarea {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark .btn {
+  background-color: white;
+  color: #a0134d;
+}
+
+body.dark .btn:hover {
+  background-color: #ffe4ec;
+  color: #870f3f;
+}
+
+/* ===== Header/Navbar ===== */
+.navbar-header {
+  background-color: #a0134d;
+  padding-bottom: 1rem;
+  color: white;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  padding: 0.4rem 1rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: white;
+  color: #a0134d;
+  box-shadow: 0 0 10px white;
+}
+
+/* Dark Mode Button */
+.dark-btn {
+  background: none;
+  border: 2px solid white;
+  color: yellow;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dark-btn:hover {
+  background-color: white;
+  color: #a0134d;
+}
+
+/* ===== Logo & Tagline ===== */
+.logo-brand {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.logo-brand h1 {
+  font-size: 2rem;
+  color: white;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ffddee;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background-color: #fff5f8;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #a0134d;
+  margin-bottom: 0.5rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #a0134d;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #870f3f;
+}
+
+/* ===== Section General ===== */
+section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+section h2 {
+  color: #a0134d;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ===== Collection Grid ===== */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.grid .item {
+  background-color: #ffe4ec;
+  color: #870f3f;
+  padding: 1.2rem;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+/* ===== Contact Form ===== */
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: bold;
+  color: #a0134d;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.contact button.btn {
+  background-color: #a0134d;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact button.btn:hover {
+  background-color: #870f3f;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #a0134d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+}
+
+  

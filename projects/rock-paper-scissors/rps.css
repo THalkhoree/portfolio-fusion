@@ -9,7 +9,6 @@
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
     color: #333;
-    text-align: center;
     scroll-behavior: smooth;
     transition: background 0.4s ease, color 0.4s ease;
     min-height: 100vh;
@@ -36,13 +35,17 @@
   }
   
   body.dark .game-container {
-    background-color: #1e1e1e;
+    background-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
   }
   
   /* ===== Header ===== */
   header {
     background-color: #a0134d;
     padding: 1rem 0;
+    text-align: center;
   }
   
   .nav-links {
@@ -92,13 +95,19 @@
     color: #a0134d;
   }
   
-  /* ===== Game Section ===== */
+  /* ===== Game Container ===== */
   .game-container {
     padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   
+  /* ===== Game Title ===== */
   .game-container h1 {
     color: #a0134d;
     font-size: 2.2rem;
@@ -110,7 +119,7 @@
     margin-bottom: 2rem;
   }
   
-  /* ===== RPS Choice Buttons ===== */
+  /* ===== Choices ===== */
   .choices {
     display: flex;
     justify-content: center;
@@ -167,7 +176,7 @@
     background-color: #870f3f;
   }
   
-  /* ===== Responsive Layout ===== */
+  /* ===== Responsive Design ===== */
   @media (max-width: 768px) {
     .choices {
       flex-direction: column;

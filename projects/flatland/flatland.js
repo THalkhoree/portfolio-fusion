@@ -1,12 +1,13 @@
-// Greet the user with a dynamic buzzword phrase on page load
+// Show a buzzword phrase when the page loads
 window.addEventListener("load", () => {
     const words = document.getElementById("words");
     words.innerHTML = createBuzzwordPhrase();
   });
   
-  // Handle square color changes
+  // Get the square element
   const square = document.getElementById("square");
   
+  // Add event listeners to the square
   square.addEventListener("mouseover", () => {
     changeColour("red");
   });
@@ -19,21 +20,19 @@ window.addEventListener("load", () => {
     changeColour("green");
   });
   
-  // Function to change square background color
+  // Function to change square color
   function changeColour(colour) {
     square.style.backgroundColor = colour;
   }
   
-  // Function to generate a random buzzword phrase
+  // Buzzword generator
   function createBuzzwordPhrase() {
-    const words1 = ["integrated", "total", "systematized", "parallel", "functional", "responsive", "optimal"];
-    const words2 = ["management", "organizational", "monitored", "reciprocal", "digital", "logistical"];
-    const words3 = ["options", "flexibility", "capability", "mobility", "programming", "interface"];
+    const words1 = ["scalable", "streamlined", "innovative", "strategic", "integrated"];
+    const words2 = ["solutions", "platforms", "frameworks", "interfaces", "experiences"];
+    const words3 = ["for the future", "that empower users", "built for growth", "that deliver impact", "to drive success"];
   
-    const rand1 = words1[Math.floor(Math.random() * words1.length)];
-    const rand2 = words2[Math.floor(Math.random() * words2.length)];
-    const rand3 = words3[Math.floor(Math.random() * words3.length)];
+    const rand = arr => arr[Math.floor(Math.random() * arr.length)];
   
-    return `Welcome to Flatland! We deliver ${rand1} ${rand2} ${rand3}.`;
+    return `Welcome to Flatland — a ${rand(words1)} ${rand(words2)} ${rand(words3)}.`;
   }
   

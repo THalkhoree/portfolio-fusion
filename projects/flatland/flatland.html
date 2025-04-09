@@ -3,22 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flatland | Interactive DOM Demo</title>
+  <title>Flatland | Business Advisor</title>
   <link rel="stylesheet" href="flatland.css" />
 </head>
 <body>
 
+  <!-- Glowing Navigation -->
   <header>
     <nav>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../landing-page/landing-page.html">Landing Page</a></li>
         <li><a href="../rock-paper-scissors/rps.html">RPS Game</a></li>
-        <li><a href="index.html" class="active">Flatland</a></li>
+        <li><a href="../rss-reader/rss-reader.html">RSS Reader</a></li>
+        <li><a href="flatland.html" class="active">Flatland</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- 🌙 Dark Mode Toggle -->
+  <script>
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = '🌙';
+    toggleButton.setAttribute('aria-label', 'Toggle dark mode');
+    Object.assign(toggleButton.style, {
+      position: 'fixed',
+      top: '10px',
+      right: '10px',
+      padding: '0.5rem 1rem',
+      border: '2px solid white',
+      backgroundColor: '#a0134d',
+      color: 'white',
+      borderRadius: '20px',
+      cursor: 'pointer',
+      zIndex: '1000',
+      fontSize: '1rem'
+    });
+    document.body.appendChild(toggleButton);
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleButton.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+
+  <!-- Main Flatland Interaction -->
   <main>
     <div id="container">
       <div id="square">Hover or click me!</div>
@@ -26,10 +54,80 @@
     </div>
   </main>
 
+  <!-- Reflection Section -->
+  <section class="reflection">
+    <h2>Flatland Reflection: Activity 3 Questions & Answers</h2>
+
+    <div class="qa">
+      <h3>Step 1: Basic Structure</h3>
+      <p><strong>Q:</strong> What static content is provided in this version?</p>
+      <p><strong>A:</strong> A grey square (#square) and a text box (#words).</p>
+
+      <p><strong>Q:</strong> How is the background colour applied?</p>
+      <p><strong>A:</strong> With inline JavaScript on the element’s style attribute.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Step 2: Simple Interactivity</h3>
+      <p><strong>Q:</strong> What happens when clicking the square?</p>
+      <p><strong>A:</strong> The background color changes using the `onclick` attribute.</p>
+
+      <p><strong>Q:</strong> How does this compare to later approaches?</p>
+      <p><strong>A:</strong> Inline events are less reusable and harder to maintain than external JS.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Step 3: Multiple Events</h3>
+      <p><strong>Q:</strong> How does the square’s background change?</p>
+      <p><strong>A:</strong> It changes to red on hover, gray on mouse out, and green on click.</p>
+
+      <p><strong>Q:</strong> Why separate functions?</p>
+      <p><strong>A:</strong> It improves clarity and reuse for each action.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Step 4: Parameterized Function</h3>
+      <p><strong>Q:</strong> Advantages of a single function?</p>
+      <p><strong>A:</strong> Easier to reuse, reduces repetition, improves maintainability.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Step 5: JavaScript Event Listeners</h3>
+      <p><strong>Q:</strong> Benefits of addEventListener?</p>
+      <p><strong>A:</strong> Keeps HTML clean, separates structure from behavior, supports multiple events.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Step 6: DOM Manipulation with onload</h3>
+      <p><strong>Q:</strong> Purpose of greeting()?</p>
+      <p><strong>A:</strong> It adds buzzword content to #words when the page loads.</p>
+
+      <p><strong>Q:</strong> What does this show?</p>
+      <p><strong>A:</strong> It demonstrates JavaScript modifying the DOM dynamically.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Step 7: External JS Handling</h3>
+      <p><strong>Q:</strong> Why remove inline handlers?</p>
+      <p><strong>A:</strong> It's cleaner and makes code easier to update and maintain.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Step 8: External Integration</h3>
+      <p><strong>Q:</strong> Why use script.js?</p>
+      <p><strong>A:</strong> Keeps JS logic out of the HTML, improving readability and reuse.</p>
+
+      <p><strong>Q:</strong> How does the buzzword help?</p>
+      <p><strong>A:</strong> It adds a fun, dynamic touch using randomly generated content.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Flatland Project | Created by Tanushree</p>
+    <p>&copy; 2025 RH Glam | Flatland by Tanushree</p>
   </footer>
 
+  <!-- External JS -->
   <script src="flatland.js"></script>
 </body>
 </html>

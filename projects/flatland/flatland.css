@@ -7,19 +7,21 @@
   
   body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
+    background-color: #fff0f5;
     color: #333;
     min-height: 100vh;
-    transition: background 0.4s ease, color 0.4s ease;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    transition: background 0.4s ease, color 0.4s ease;
   }
   
-  /* ===== Navigation Header (optional if added) ===== */
+  /* ===== Navigation Header ===== */
   header {
     background-color: #a0134d;
     padding: 1rem 0;
     text-align: center;
+    width: 100%;
   }
   
   .nav-links {
@@ -41,22 +43,23 @@
   }
   
   .nav-links li a:hover,
+  .nav-links li a:focus,
   .nav-links li a.active {
     border: 2px solid white;
     background-color: #a0134d;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
   }
   
-  /* ===== Main Layout ===== */
+  /* ===== Container & Main Layout ===== */
   main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    width: 100%;
   }
   
-  /* ===== Flatland Container ===== */
   #container {
     display: flex;
     gap: 2rem;
@@ -65,35 +68,65 @@
     flex-wrap: wrap;
   }
   
-  /* ===== Square Element ===== */
+  /* ===== Interactive Square ===== */
   #square {
     width: 150px;
     height: 150px;
     background-color: gray;
     color: white;
-    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: background-color 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
   #square:hover {
     transform: scale(1.05);
   }
   
-  /* ===== Buzzword Text Area ===== */
+  /* ===== Buzzword Text Box ===== */
   #words {
     max-width: 300px;
-    font-size: 1.2rem;
-    text-align: left;
     padding: 1rem;
-    background-color: #ffe4ec;
+    font-size: 1.1rem;
+    background: #ffe4ec;
     border-radius: 10px;
     box-shadow: 0 0 8px rgba(160, 19, 77, 0.2);
+  }
+  
+  /* ===== Reflection Section ===== */
+  .reflection {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffeef8;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(160, 19, 77, 0.1);
+  }
+  
+  body.dark .reflection {
+    background-color: #2a2a2a;
+    color: #eee;
+  }
+  
+  .reflection h2 {
+    color: #a0134d;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .reflection h3 {
+    margin-top: 2rem;
+    color: #a0134d;
+  }
+  
+  .qa p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
   }
   
   /* ===== Footer ===== */
@@ -103,5 +136,27 @@
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  /* ===== Dark Mode ===== */
+  body.dark {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  body.dark #words {
+    background: #2a2a2a;
+    color: #fff;
+  }
+  
+  body.dark #square {
+    background-color: #444;
+    color: white;
+  }
+  
+  body.dark footer,
+  body.dark header {
+    background-color: #a0134d;
   }
   

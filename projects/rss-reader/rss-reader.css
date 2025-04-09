@@ -1,0 +1,137 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
+    color: #333;
+    transition: background 0.4s ease, color 0.4s ease;
+    min-height: 100vh;
+  }
+  
+  body.dark {
+    background: linear-gradient(to bottom right, #1e1e1e, #121212);
+    color: #e0e0e0;
+  }
+  
+  /* ===== Header Navigation ===== */
+  header {
+    background-color: #a0134d;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a:focus,
+  .nav-links li a.active {
+    border: 2px solid white;
+    background-color: #a0134d;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+  
+  /* ===== RSS Feed Container ===== */
+  .rss-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .rss-container h1 {
+    color: #a0134d;
+    margin-bottom: 1rem;
+  }
+  
+  .rss-container select {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feed-display {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .feed-display h3 {
+    color: #a0134d;
+    margin-bottom: 0.3rem;
+  }
+  
+  .feed-display p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .feed-display a {
+    color: #a0134d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .feed-display a:hover {
+    text-decoration: underline;
+  }
+  
+  .placeholder {
+    font-style: italic;
+    color: #666;
+  }
+  
+  body.dark .feed-display {
+    background-color: #2a2a2a;
+    color: white;
+  }
+  
+  body.dark .feed-display h3 {
+    color: #ffcce6;
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    background-color: #a0134d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .rss-container {
+      padding: 1rem;
+    }
+    .rss-container h1 {
+      font-size: 1.5rem;
+    }
+    .feed-display {
+      padding: 1rem;
+    }
+  }
+  

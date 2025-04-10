@@ -2,24 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RPS Game | RH Glam Edition</title>
   <link rel="stylesheet" href="rps.css" />
 </head>
 <body>
-
-  <!-- Glowing Navigation Header -->
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../landing-page/landing-page.html">Landing Page</a></li>
-        <li><a href="rps.html" class="active">RPS Game</a></li>
-        <li><a href="../rss-reader/rss-reader.html">RSS Reader</a></li>
-        <li><a href="../flatland/flatland.html">Flatland</a></li>
-      </ul>
-    </nav>
-  </header>
 
   <!-- 🌙 Dark Mode Toggle -->
   <script>
@@ -46,36 +33,61 @@
     });
   </script>
 
-  <!-- Game Section -->
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../landing-page/landing-page.html">Landing Page</a></li>
+        <li><a href="rps.html" class="active">RPS Game</a></li>
+        <li><a href="../rss-reader/rss-reader.html">RSS Reader</a></li>
+        <li><a href="../flatland/flatland.html">Flatland</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Game Container -->
   <main class="game-container">
-    <h1>Rock, Paper, Scissors</h1>
-    <p class="instructions">Choose wisely... the result will appear after 3 seconds ⏳</p>
+    <div class="game-box">
+      <h1>Rock, Paper, Scissors</h1>
+      <p class="instructions">Choose wisely... the result will appear after 3 seconds ⏳</p>
 
-    <div class="choices">
-      <img src="images/rock.png" alt="Rock" id="rock" class="choice" />
-      <img src="images/paper.png" alt="Paper" id="paper" class="choice" />
-      <img src="images/scissors.png" alt="Scissors" id="scissors" class="choice" />
+      <div class="choices">
+        <img src="images/rock.png" alt="Rock" id="rock" class="choice" />
+        <img src="images/paper.png" alt="Paper" id="paper" class="choice" />
+        <img src="images/scissors.png" alt="Scissors" id="scissors" class="choice" />
+      </div>
+
+      <div class="result">
+        <p id="status">Make your move!</p>
+        <p id="player-choice"></p>
+        <p id="computer-choice"></p>
+      </div>
+
+      <div class="scoreboard">
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Ties: <span id="ties">0</span></p>
+      </div>
+
+      <button id="reset" class="btn">Reset Game</button>
     </div>
 
-    <div class="result">
-      <p id="status">Make your move!</p>
-      <p id="player-choice"></p>
-      <p id="computer-choice"></p>
-    </div>
-
-    <div class="scoreboard">
-      <p>Wins: <span id="wins">0</span></p>
-      <p>Losses: <span id="losses">0</span></p>
-      <p>Ties: <span id="ties">0</span></p>
-    </div>
-
-    <button id="reset" class="btn">Reset Game</button>
+    <!-- Score Celebration Pop-Up -->
+    <div id="popup-celebration"></div>
   </main>
 
-  <!-- Game Logic -->
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Tanushree Halkhoree | ISYS3004 Portfolio</p>
+  </footer>
+
+  <!-- Game Logic + Confetti -->
   <script src="rps.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
+
 
 
 

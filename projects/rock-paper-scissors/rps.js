@@ -6,6 +6,7 @@ const wins = document.getElementById('wins');
 const losses = document.getElementById('losses');
 const ties = document.getElementById('ties');
 const resetButton = document.getElementById('reset');
+const popup = document.getElementById('popup-celebration');
 
 let winCount = 0;
 let lossCount = 0;
@@ -18,7 +19,6 @@ choices.forEach(choice => {
     const playerChoice = choice.id;
     const computerChoice = getComputerChoice();
 
-    // Show suspense message
     status.textContent = 'Processing your move... ⏳';
     playerChoiceDisplay.textContent = '';
     computerChoiceDisplay.textContent = '';
@@ -31,7 +31,7 @@ choices.forEach(choice => {
       status.textContent = result;
 
       updateScore(result);
-    }, 3000); // ⏱ 3-second delay
+    }, 3000);
   });
 });
 
@@ -69,15 +69,61 @@ function updateScore(result) {
   if (result.includes('win')) {
     winCount++;
     wins.textContent = winCount;
+    launchConfetti();
+    showPopup("🏆 You Win!");
   } else if (result.includes('lose')) {
     lossCount++;
     losses.textContent = lossCount;
+    showThumbDown();
+    showPopup("💔 You Lost!");
   } else {
     tieCount++;
     ties.textContent = tieCount;
+    showPopup("🤝 It's a Draw!");
   }
 }
 
 function capitalize(word) {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+// 🎉 Confetti on win
+function launchConfetti() {
+  confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+}
+
+// 👎 Thumbs-down on loss
+function showThumbDown() {
+  const emoji = document.createElement('div');
+  emoji.textContent = '👎';
+  emoji.style.position = 'fixed';
+  emoji.style.top = '50%';
+  emoji.style.left = '50%';
+  emoji.style.fontSize = '3rem';
+  emoji.style.transform = 'translate(-50%, -50%)';
+  emoji.style.zIndex = '999';
+  emoji.style.opacity = '1';
+  emoji.style.transition = 'opacity 1s ease';
+
+  document.body.appendChild(emoji);
+
+  setTimeout(() => {
+    emoji.style.opacity = '0';
+    setTimeout(() => emoji.remove(), 1000);
+  }, 1000);
+}
+
+// 🎈 Celebration popup
+function showPopup(message) {
+  popup.textContent = message;
+  popup.style.display = 'block';
+
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 1500);
+}
+

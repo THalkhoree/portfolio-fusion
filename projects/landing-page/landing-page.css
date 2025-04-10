@@ -35,10 +35,11 @@ body.dark {
   color: #e0e0e0;
 }
 
-header,
-footer {
-  background-color: #a0134d !important;
-  color: white !important;
+/* ===== Header ===== */
+header {
+  background-color: #a0134d;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 .nav-links {
@@ -47,24 +48,32 @@ footer {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.2rem;
   border: 2px solid transparent;
   border-radius: 25px;
   transition: all 0.3s ease;
 }
 
 .nav-links li a:hover,
-.nav-links li a:focus,
-.nav-links li a.active {
+.nav-links li a:focus {
   border: 2px solid white;
   background-color: #a0134d;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.nav-links li a.active {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
 }
 
 .hero {
@@ -270,3 +279,6 @@ footer {
     font-size: 1.6rem;
   }
 }
+
+
+

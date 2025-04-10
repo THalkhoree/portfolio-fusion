@@ -1,27 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RSS Reader | RH Glam Dashboard</title>
-  <link rel="stylesheet" href="rss-reader.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Feed RSS Reader</title>
+  <link rel="stylesheet" href="rss-reader.css" />
 </head>
 <body>
 
-  <!-- Glowing Navigation Header -->
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../landing-page/landing-page.html">Landing Page</a></li>
-        <li><a href="../rock-paper-scissors/rps.html">RPS Game</a></li>
-        <li><a href="rss-reader.html" class="active">RSS Reader</a></li>
-        <li><a href="../flatland/flatland.html">Flatland</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- 🌙 Dark Mode Toggle Button -->
+  <!-- 🌙 Dark Mode Toggle -->
   <script>
     const toggleButton = document.createElement('button');
     toggleButton.textContent = '🌙';
@@ -46,28 +33,50 @@
     });
   </script>
 
-  <!-- RSS Feed Section -->
-  <main class="rss-container">
-    <h1>Multi-Feed RSS Reader</h1>
-    <p>Select a feed source to view the latest posts:</p>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../landing-page/landing-page.html">Landing Page</a></li>
+        <li><a href="../rock-paper-scissors/rps.html">RPS Game</a></li>
+        <li><a href="rss-reader.html" class="active">RSS Reader</a></li>
+        <li><a href="../flatland/flatland.html">Flatland</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <select id="feedSelector">
-      <option value="https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/world/rss.xml">BBC World News</option>
-      <option value="https://api.rss2json.com/v1/api.json?rss_url=https://www.nasa.gov/rss/dyn/breaking_news.rss">NASA Breaking News</option>
-      <option value="https://api.rss2json.com/v1/api.json?rss_url=https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml">NYT Home</option>
+  <!-- Main Content -->
+  <main class="container">
+    <h1>Multi-Feed RSS Reader</h1>
+    <p class="tagline">✨ Stay informed, stylishly ✨</p>
+
+    <!-- Feed Logo -->
+    <div id="feed-logo">
+      <img src="images/bbc.png" alt="Feed Logo" class="feed-icon" />
+    </div>
+
+    <!-- Feed Source Selector -->
+    <p>Select a feed source to view the latest posts:</p>
+    <select id="feed-select">
+      <option value="bbc">📰 BBC World News</option>
+      <option value="mozilla">🦊 Mozilla Hacks</option>
+      <option value="wired">💡 Wired Tech</option>
     </select>
 
-    <div id="feedDisplay" class="feed-display">
-      <p class="placeholder">Feed content will appear here...</p>
-    </div>
+    <!-- Feed Count -->
+    <p id="feed-count" class="feed-count">Loading headlines... 📖</p>
+
+    <!-- Feed Cards -->
+    <div id="feed" class="feed-container"></div>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 RH Glam | RSS Reader by Tanushree</p>
+    <p>&copy; 2025 Tanushree | RSS Reader by Tanushree</p>
   </footer>
 
-  <!-- JS Logic -->
+  <!-- JavaScript -->
   <script src="rss-reader.js"></script>
 </body>
 </html>

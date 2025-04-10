@@ -1,137 +1,204 @@
-/* ===== Reset & Base ===== */
+/* ===== Base Reset ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.4s ease, color 0.4s ease;
+  position: relative;
+}
+
+body.dark {
+  background: linear-gradient(to bottom right, #1e1e1e, #121212);
+  color: #e0e0e0;
+}
+
+
+/* ===== Header ===== */
+header {
+  background-color: #a0134d;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  border: 2px solid white;
+  background-color: #a0134d;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.nav-links li a.active {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Tagline ===== */
+.tagline {
+  font-style: italic;
+  color: #a0134d;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* ===== Feed Logo ===== */
+#feed-logo {
+  margin-bottom: 1rem;
+}
+
+.feed-icon {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.feed-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Select ===== */
+select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+body.dark select {
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+}
+
+/* ===== Feed Count ===== */
+.feed-count {
+  font-weight: 600;
+  color: #a0134d;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* ===== Feed Cards ===== */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.feed-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(160, 19, 77, 0.1);
+  animation: fadeUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(10px);
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feed-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(160, 19, 77, 0.2);
+  border: 1px solid #ffb6d9;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
-    color: #333;
-    transition: background 0.4s ease, color 0.4s ease;
-    min-height: 100vh;
+}
+
+body.dark .feed-card {
+  background-color: #2e2e2e;
+  color: #ffcce6;
+}
+
+.feed-card h3 {
+  color: #a0134d;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+body.dark .feed-card h3 {
+  color: #ff87b3;
+}
+
+.feed-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+body.dark .feed-card p {
+  color: #ddd;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #a0134d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .feed-icon {
+    width: 50px;
   }
-  
-  body.dark {
-    background: linear-gradient(to bottom right, #1e1e1e, #121212);
-    color: #e0e0e0;
+
+  select {
+    width: 100%;
   }
-  
-  /* ===== Header Navigation ===== */
-  header {
-    background-color: #a0134d;
-    padding: 1rem 0;
-    text-align: center;
+
+  .feed-card {
+    padding: 0.8rem;
   }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border: 2px solid transparent;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links li a:hover,
-  .nav-links li a:focus,
-  .nav-links li a.active {
-    border: 2px solid white;
-    background-color: #a0134d;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-  }
-  
-  /* ===== RSS Feed Container ===== */
-  .rss-container {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .rss-container h1 {
-    color: #a0134d;
-    margin-bottom: 1rem;
-  }
-  
-  .rss-container select {
-    padding: 0.6rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .feed-display {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .feed-display h3 {
-    color: #a0134d;
-    margin-bottom: 0.3rem;
-  }
-  
-  .feed-display p {
-    margin-bottom: 1.5rem;
-  }
-  
-  .feed-display a {
-    color: #a0134d;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .feed-display a:hover {
-    text-decoration: underline;
-  }
-  
-  .placeholder {
-    font-style: italic;
-    color: #666;
-  }
-  
-  body.dark .feed-display {
-    background-color: #2a2a2a;
-    color: white;
-  }
-  
-  body.dark .feed-display h3 {
-    color: #ffcce6;
-  }
-  
-  /* ===== Footer ===== */
-  footer {
-    background-color: #a0134d;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  /* ===== Responsive ===== */
-  @media (max-width: 600px) {
-    .rss-container {
-      padding: 1rem;
-    }
-    .rss-container h1 {
-      font-size: 1.5rem;
-    }
-    .feed-display {
-      padding: 1rem;
-    }
-  }
+}
+
   

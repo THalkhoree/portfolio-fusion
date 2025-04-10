@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flatland Step 4</title>
+  <link rel="stylesheet" href="flatland_4.css">
+  <script>
+    function changeColour(colour) {
+      document.getElementById("square").style.backgroundColor = colour;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../flatland.html">← Back to Overview</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div id="square"
+         onclick="changeColour('green')"
+         onmouseover="changeColour('red')"
+         onmouseout="changeColour('gray')">
+      Parameterized
+    </div>
+    <div id="words">This step uses a single function with parameters for color changes.</div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RH Glam | Flatland Step 4</p>
+  </footer>
+</body>
+</html>

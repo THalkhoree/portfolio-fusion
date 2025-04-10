@@ -7,14 +7,14 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff0f5;
+  background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
   color: #333;
   line-height: 1.6;
 }
 
+/* ===== Header Navigation ===== */
 header {
   background-color: #a0134d;
-  color: white;
   padding: 1rem 0;
   text-align: center;
 }
@@ -25,7 +25,6 @@ header {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  padding: 0;
 }
 
 .nav-links li a {
@@ -45,6 +44,7 @@ header {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
+/* ===== Overview Layout ===== */
 main.flatland-steps {
   max-width: 1000px;
   margin: 2rem auto;
@@ -58,6 +58,7 @@ main.flatland-steps {
   margin-bottom: 2rem;
 }
 
+/* ===== Individual Step Card ===== */
 .step {
   background-color: #ffe4ec;
   border-radius: 12px;
@@ -65,6 +66,11 @@ main.flatland-steps {
   margin-bottom: 2rem;
   padding: 1.5rem;
   text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: scale(1.01);
 }
 
 .step h2 {
@@ -92,6 +98,7 @@ main.flatland-steps {
   margin: 0.5rem 0;
 }
 
+/* ===== Footer ===== */
 footer {
   background-color: #a0134d;
   color: white;
@@ -129,5 +136,3 @@ body.dark .btn:hover {
   background-color: #ffe4ec;
   color: #870f3f;
 }
-
-

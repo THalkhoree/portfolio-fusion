@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flatland Step 3</title>
+  <link rel="stylesheet" href="flatland_3.css">
+  <script>
+    function makeGreen() {
+      document.getElementById("square").style.backgroundColor = "green";
+    }
+    function makeRed() {
+      document.getElementById("square").style.backgroundColor = "red";
+    }
+    function makeGray() {
+      document.getElementById("square").style.backgroundColor = "gray";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../flatland.html">← Back to Overview</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div id="square" onclick="makeGreen()" onmouseover="makeRed()" onmouseout="makeGray()">Events</div>
+    <div id="words">This step uses separate functions for click, mouseover, and mouseout events.</div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RH Glam | Flatland Step 3</p>
+  </footer>
+</body>
+</html>

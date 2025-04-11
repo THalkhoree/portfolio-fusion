@@ -46,37 +46,39 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <main class="container">
-    <h1>Multi-Feed RSS Reader</h1>
-    <p class="tagline">✨ Stay informed, stylishly ✨</p>
+    <div class="reader-box">
+      <h1>Multi-Feed RSS Reader</h1>
+      <p class="tagline">✨ Stay informed, stylishly ✨</p>
 
-    <!-- Feed Logo -->
-    <div id="feed-logo">
-      <img src="images/bbc.png" alt="Feed Logo" class="feed-icon" />
+      <!-- Feed Logo -->
+      <div id="feed-logo">
+        <img src="images/bbc.png" alt="Feed Logo" class="feed-icon" />
+      </div>
+
+      <!-- Feed Selector -->
+      <p>Select a feed source to view the latest posts:</p>
+      <select id="feed-select">
+        <option value="bbc">BBC World News</option>
+        <option value="mozilla">Mozilla Hacks</option>
+        <option value="wired">Wired Tech</option>
+      </select>
+
+      <!-- Entry Count -->
+      <p id="feed-count" class="feed-count">Loading headlines... 📖</p>
+
+      <!-- Feed Cards -->
+      <div id="feed" class="feed-container"></div>
     </div>
-
-    <!-- Feed Source Selector -->
-    <p>Select a feed source to view the latest posts:</p>
-    <select id="feed-select">
-      <option value="bbc">📰 BBC World News</option>
-      <option value="mozilla">🦊 Mozilla Hacks</option>
-      <option value="wired">💡 Wired Tech</option>
-    </select>
-
-    <!-- Feed Count -->
-    <p id="feed-count" class="feed-count">Loading headlines... 📖</p>
-
-    <!-- Feed Cards -->
-    <div id="feed" class="feed-container"></div>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Tanushree | RSS Reader by Tanushree</p>
+    <p>&copy; 2025 Tanushree Halkhoree | RSS Reader </p>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Script -->
   <script src="rss-reader.js"></script>
 </body>
 </html>

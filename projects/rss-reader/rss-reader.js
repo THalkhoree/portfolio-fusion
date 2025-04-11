@@ -1,41 +1,42 @@
+// DOM Elements
 const feedSelect = document.getElementById('feed-select');
 const feedContainer = document.getElementById('feed');
 const logoContainer = document.getElementById('feed-logo');
 const feedCount = document.getElementById('feed-count');
 
-// 🌐 Feed sources via rss2json
+// RSS Sources (via rss2json)
 const feedSources = {
   bbc: 'https://api.rss2json.com/v1/api.json?rss_url=http://feeds.bbci.co.uk/news/world/rss.xml',
   mozilla: 'https://api.rss2json.com/v1/api.json?rss_url=https://hacks.mozilla.org/feed/',
   wired: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.wired.com/feed/category/gear/latest/rss'
 };
 
-// 🎨 Feed logos
+// Logos for each feed
 const feedLogos = {
   bbc: 'images/bbc.png',
   mozilla: 'images/mozilla.png',
   wired: 'images/wired.png'
 };
 
-// 🔁 Load default feed on page load
+// Load default feed on page load
 window.addEventListener('DOMContentLoaded', () => {
   fetchFeed('bbc');
   updateFeedLogo('bbc');
 });
 
-// 🎯 Feed selection handler
+// Dropdown change handler
 feedSelect.addEventListener('change', (e) => {
   const source = e.target.value;
   fetchFeed(source);
   updateFeedLogo(source);
 });
 
-// 🖼️ Update feed logo
+// Update feed logo
 function updateFeedLogo(source) {
   logoContainer.innerHTML = `<img src="${feedLogos[source]}" class="feed-icon" alt="${source} Logo" />`;
 }
 
-// 📥 Fetch and display feed
+// Fetch feed via API
 function fetchFeed(source) {
   const url = feedSources[source];
   feedContainer.innerHTML = 'Loading feed...';
@@ -55,7 +56,7 @@ function fetchFeed(source) {
     });
 }
 
-// 📰 Display feed cards with animation
+// Render feed cards
 function displayFeed(items) {
   feedContainer.innerHTML = '';
   const maxItems = 8;

@@ -7,20 +7,36 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
+  background: url("images/news-bg.png") repeat;
+  background-size: 500px;
+  animation: scrollNewsBG 80s linear infinite;
   color: #333;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   transition: background 0.4s ease, color 0.4s ease;
   position: relative;
+  z-index: 0;
 }
 
-body.dark {
-  background: linear-gradient(to bottom right, #1e1e1e, #121212);
-  color: #e0e0e0;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 240, 245, 0.88);
+  z-index: -1;
 }
 
+body.dark::before {
+  background: rgba(18, 18, 18, 0.6);
+}
+
+@keyframes scrollNewsBG {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
 
 /* ===== Header ===== */
 header {
@@ -65,18 +81,42 @@ header {
 
 /* ===== Main Container ===== */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
   text-align: center;
-  position: relative;
   z-index: 1;
+}
+
+/* ===== Glam Rectangle Box ===== */
+.reader-box {
+  background-color: #a0134d;
+  border-radius: 20px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 0 25px rgba(160, 19, 77, 0.4);
+  border: 2px solid #f8c0d8;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: box-shadow 0.5s ease;
+}
+
+.reader-box:hover {
+  box-shadow: 0 0 30px rgba(160, 19, 77, 0.6),
+              0 0 60px rgba(255, 192, 203, 0.4),
+              inset 0 0 10px rgba(255, 182, 193, 0.3);
+}
+
+body.dark .reader-box {
+  background-color: #80103a;
+  color: white;
+  border: 2px solid #ffb6d9;
 }
 
 /* ===== Tagline ===== */
 .tagline {
   font-style: italic;
-  color: #a0134d;
+  color: #ffeef6;
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
@@ -96,7 +136,7 @@ header {
   transform: scale(1.1);
 }
 
-/* ===== Select ===== */
+/* ===== Feed Selector ===== */
 select {
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -111,10 +151,10 @@ body.dark select {
   border: 1px solid #666;
 }
 
-/* ===== Feed Count ===== */
+/* ===== Entry Count ===== */
 .feed-count {
   font-weight: 600;
-  color: #a0134d;
+  color: #fff;
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
@@ -137,6 +177,7 @@ body.dark select {
   transform: translateY(10px);
   border: 1px solid transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #333;
 }
 
 .feed-card:hover {
@@ -200,5 +241,6 @@ footer {
     padding: 0.8rem;
   }
 }
+
 
   

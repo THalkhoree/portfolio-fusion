@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
 body.dark {
@@ -63,18 +64,32 @@ header {
 
 .intro h1 {
   color: #a0134d;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #a0134d;
+  animation: typing 4s steps(40, end), blink 0.8s step-end infinite;
 }
 
-body.dark .intro h1 {
-  color: #f06595;
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 .intro .tagline {
   font-size: 1.1rem;
   color: #444;
   line-height: 1.6;
+}
+
+body.dark .intro h1 {
+  color: #f06595;
+  border-color: #f06595;
 }
 
 body.dark .tagline {
@@ -158,13 +173,32 @@ body.dark .projects h2 {
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   margin-top: 1rem;
 }
 
 .btn:hover {
   background-color: #f0f0f0;
   color: #870f3f;
+  box-shadow: 0 0 8px rgba(160, 19, 77, 0.4);
+}
+
+/* ===== Petal Animation ===== */
+.petal {
+  position: fixed;
+  top: -50px;
+  font-size: 1.2rem;
+  color: #fbc6d0;
+  animation: fall linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
 }
 
 /* ===== Footer ===== */
@@ -177,16 +211,6 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-}
-
-/* ===== Scrollbar for Project List ===== */
-.project-list::-webkit-scrollbar {
-  height: 6px;
-}
-
-.project-list::-webkit-scrollbar-thumb {
-  background-color: #a0134d;
-  border-radius: 10px;
 }
 
 /* ===== Responsive Design ===== */
@@ -204,6 +228,7 @@ footer {
     flex: 1 0 80%;
   }
 }
+
 
   
   

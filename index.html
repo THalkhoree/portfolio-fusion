@@ -5,21 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tanushree's Portfolio</title>
   <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .intro h1.typing {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #a0134d;
+      animation: typing 4s steps(30, end), blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .petal {
+      position: fixed;
+      top: -50px;
+      font-size: 1.2rem;
+      color: #fbc6d0;
+      animation: fall linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="projects/landing-page/landing-page.html">Landing Page</a></li>
-        <li><a href="projects/rock-paper-scissors/rps.html">RPS Game</a></li>
-        <li><a href="projects/rss-reader/rss-reader.html">RSS Reader</a></li>
-        <li><a href="projects/flatland/flatland.html">Flatland</a></li>
-      </ul>
-    </nav>
-  </header>
 
   <!-- 🌙 Dark Mode Toggle -->
   <script>
@@ -46,10 +68,23 @@
     });
   </script>
 
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="projects/landing-page/landing-page.html">Landing Page</a></li>
+        <li><a href="projects/rock-paper-scissors/rps.html">RPS Game</a></li>
+        <li><a href="projects/rss-reader/rss-reader.html">RSS Reader</a></li>
+        <li><a href="projects/flatland/flatland.html">Flatland</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- Main Content -->
   <main class="main-content">
     <section class="intro">
-      <h1>Hi, I'm Tanushree</h1>
+      <h1 class="typing">Hi, I'm Tanushree</h1>
       <p class="tagline">
         A tech-savvy BCom student who loves solving problems, setting up networks, and getting hands-on with firewalls and code. I'm all about turning caffeine and curiosity into cool IT solutions!
       </p>
@@ -125,10 +160,27 @@
   </main>
 
   <!-- Footer -->
-  <footer style="background-color:#a0134d; color:white;">
+  <footer>
     <p>&copy; 2025 Tanushree | ISYS3004 Portfolio</p>
   </footer>
 
+  <!-- Petal Animation -->
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.textContent = '🌸';
+      petal.style.left = Math.random() * 100 + '%';
+      petal.style.fontSize = (Math.random() * 12 + 12) + 'px';
+      petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 10000);
+    }
+
+    setInterval(createPetal, 500);
+  </script>
+
 </body>
 </html>
+
 

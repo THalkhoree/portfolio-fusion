@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flatland Step 4</title>
-  <link rel="stylesheet" href="flatland_4.css">
-  <script>
-    function changeColour(colour) {
-      document.getElementById("square").style.backgroundColor = colour;
-    }
-  </script>
+  <link rel="stylesheet" href="flatland_4.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <nav>
       <ul class="nav-links">
@@ -20,6 +17,7 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main>
     <div id="square"
          onclick="changeColour('green')"
@@ -30,8 +28,18 @@
     <div id="words">This step uses a single function with parameters for color changes.</div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 RH Glam | Flatland Step 4</p>
   </footer>
+
+  <!-- Inline Script -->
+  <script>
+    function changeColour(colour) {
+      document.getElementById("square").style.backgroundColor = colour;
+    }
+  </script>
+
 </body>
 </html>
+

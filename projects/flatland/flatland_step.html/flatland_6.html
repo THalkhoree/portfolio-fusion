@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="flatland_6.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <nav>
       <ul class="nav-links">
@@ -15,25 +17,38 @@
     </nav>
   </header>
 
+  <!-- Main Section -->
   <main>
     <div id="square">Welcome</div>
     <div id="words"></div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 RH Glam | Flatland Step 6</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
     const square = document.getElementById("square");
 
-    square.addEventListener("mouseover", () => square.style.backgroundColor = "red");
-    square.addEventListener("mouseout", () => square.style.backgroundColor = "gray");
-    square.addEventListener("click", () => square.style.backgroundColor = "green");
+    square.addEventListener("mouseover", () => {
+      square.style.backgroundColor = "red";
+    });
+
+    square.addEventListener("mouseout", () => {
+      square.style.backgroundColor = "gray";
+    });
+
+    square.addEventListener("click", () => {
+      square.style.backgroundColor = "green";
+    });
 
     window.addEventListener("load", () => {
       document.getElementById("words").innerHTML = "Hello from Flatland!";
     });
   </script>
+
 </body>
 </html>
+

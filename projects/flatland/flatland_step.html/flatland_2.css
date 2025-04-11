@@ -1,42 +1,97 @@
-/* Flatland Step 2 - Click Glow Effect */
+/* ===== Base Styling ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background: linear-gradient(to right, #fff0f5, #ffe4ec);
-    font-family: 'Segoe UI', sans-serif;
-    color: #222;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  #square {
-    width: 150px;
-    height: 150px;
-    background-color: gray;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(160, 19, 77, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
-    transition: transform 0.2s ease;
-    cursor: pointer;
-  }
-  
-  #square:active {
-    box-shadow: 0 0 20px #a0134d;
-    transform: scale(0.95);
-  }
-  
-  #words {
-    margin-top: 2rem;
-    font-size: 1.1rem;
-    text-align: center;
-    background-color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.05);
-  }
-  
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fff0f5, #ffe4ec);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #a0134d;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  border: 2px solid white;
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+/* ===== Main ===== */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ===== Square ===== */
+#square {
+  width: 150px;
+  height: 150px;
+  background-color: gray;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(160, 19, 77, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+#square:active {
+  box-shadow: 0 0 20px #a0134d;
+  transform: scale(0.95);
+}
+
+/* ===== Text Box ===== */
+#words {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  font-size: 1.1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #a0134d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

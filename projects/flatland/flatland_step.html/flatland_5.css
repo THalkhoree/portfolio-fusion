@@ -10,9 +10,12 @@ body {
   background: linear-gradient(to bottom right, #fff0f5, #fff5f8);
   color: #333;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* ===== Header Navigation ===== */
+/* ===== Header ===== */
 header {
   background-color: #a0134d;
   padding: 1rem 0;
@@ -24,7 +27,6 @@ header {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -32,70 +34,49 @@ header {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  border: 2px solid transparent;
   border-radius: 25px;
+  border: 2px solid transparent;
   transition: all 0.3s ease;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
   border: 2px solid white;
-  background-color: #a0134d;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
 
-/* ===== Overview Layout ===== */
-main.flatland-steps {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 2rem;
+/* ===== Centered Main Layout ===== */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 2rem;
 }
 
-.flatland-steps h1 {
-  font-size: 2rem;
-  color: #a0134d;
-  margin-bottom: 2rem;
-}
-
-/* ===== Individual Step Card ===== */
-.step {
-  background-color: #ffe4ec;
+/* ===== Square Box ===== */
+#square {
+  width: 150px;
+  height: 150px;
+  background-color: gray;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(160, 19, 77, 0.1);
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  text-align: left;
-  transition: transform 0.3s ease;
-}
-
-.step:hover {
-  transform: scale(1.01);
-}
-
-.step h2 {
-  color: #a0134d;
-  margin-bottom: 1rem;
-}
-
-.step .btn {
-  display: inline-block;
-  margin: 0.5rem 0 1rem 0;
-  padding: 0.5rem 1.2rem;
-  background-color: #a0134d;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
   color: white;
-  border-radius: 25px;
-  text-decoration: none;
+  font-size: 1.1rem;
   font-weight: bold;
-  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  transition: background-color 0.3s ease;
 }
 
-.step .btn:hover {
-  background-color: #870f3f;
-}
-
-.step p {
-  margin: 0.5rem 0;
+/* ===== Description ===== */
+#words {
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 
 /* ===== Footer ===== */
@@ -107,32 +88,3 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== Dark Mode Support ===== */
-body.dark {
-  background-color: #121212;
-  color: #eee;
-}
-
-body.dark .step {
-  background-color: #2a2a2a;
-  color: white;
-}
-
-body.dark .step h2 {
-  color: #ffcce6;
-}
-
-body.dark header,
-body.dark footer {
-  background-color: #a0134d;
-}
-
-body.dark .btn {
-  background-color: white;
-  color: #a0134d;
-}
-
-body.dark .btn:hover {
-  background-color: #ffe4ec;
-  color: #870f3f;
-}
